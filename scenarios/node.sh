@@ -30,7 +30,9 @@ function node()
     LOCK=/tmp/lock.node.${VERSION}
     [ -f ${LOCK} ] && return
 
-    sudo su - ${USER} -c "nvm install ${VERSION} > /dev/null 2>&1"
+    # sudo su - ${USER} -c "nvm install ${VERSION} > /dev/null 2>&1"
+    sudo su - ${USER} -c "nvm install ${VERSION}"
+
     > ${LOCK}
 }
 
@@ -64,7 +66,7 @@ function main()
 
     nvmTool
     node
-    extras
+    # extras
 
     echo ""
     echo "Done!"
