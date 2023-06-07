@@ -44,12 +44,6 @@ function zsh()
     > ${LOCK}
 }
 
-function setShell()
-{
-    SHELL=$1
-    sudo chsh -s /bin/${SHELL} ${USER}
-}
-
 function base()
 {
     echo "Installing Base development scenario"
