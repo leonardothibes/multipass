@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Installing Base development scenario"
-
 function update()
 {
     echo " - Updating package list..."
@@ -46,8 +44,11 @@ function zsh()
 
 function base()
 {
+    echo "Installing Base development scenario"
+
     update
     utils
     zsh
+
     echo ""
 }
