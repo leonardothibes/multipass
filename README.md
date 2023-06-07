@@ -26,6 +26,11 @@ Scenarios Instalation
 wget -qO- https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/node.sh | bash
 ```
 
+**PHP 7.4**
+```bash
+wget -qO- https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/php-7.4.sh | bash
+```
+
 **Basic Bash**
 ```bash
 wget -qO- https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/bash.sh | bash
