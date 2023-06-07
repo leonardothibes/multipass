@@ -6,14 +6,14 @@ Script for instalation of dwevelopment scenarios into [Multipass](https://multip
 Multipass Instalation
 =====================
 
-### Enabling Snap, if necessary
+#### Enabling Snap, if necessary
 ```bash
 rm -f /etc/apt/preferences.d/nosnap.pref
 sudo apt update
 sudo apt install snapd
 ```
 
-### Instaling Multipass
+#### Instaling Multipass
 ```bash
 sudo snap install multipass
 ```
