@@ -68,6 +68,7 @@ function main()
 {
     clear
     echo "Installing Node.js development scenario"
+    echo ""
 
     base
     nvmTool
