@@ -1,29 +1,3 @@
-Multipass
-=========
-
-Script for instalation of dwevelopment scenarios into [Multipass](https://multipass.run/).
-
-Scenarios Instalation
-=====================
-
-**Node.js**
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/develop/scenarios/node/install.sh)"
-```
-
-**PHP 7.4**
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/develop/scenarios/php/7.4/install.sh)"
-```
-
-Author
-------
-
- * **Leonardo Thibes <leonardothibes@gmail.com>**
-
-LICENSE
-=======
-
 Copyright (c) 2023 Leonardo Thibes
 
 The MIT License
