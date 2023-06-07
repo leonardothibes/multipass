@@ -70,7 +70,7 @@ function main()
     base
     nvmTool
     node
-    # extras
+    extras
 
     echo ""
     echo "Done!"
