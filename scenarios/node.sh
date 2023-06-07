@@ -1,7 +1,5 @@
 #!/bin/bash
 
-clear
-
 HERE=$(dirname $0)
 BASE="${HERE}/base.sh"
 VERSION=16
@@ -10,7 +8,7 @@ if [ -f $BASE ]; then
     source $BASE
 else
     curl -s https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/base.sh -o /tmp/bash.sh
-    source /tmp/bash.sh
+    source /tmp/base.sh
 fi
 
 function nvmTool()
@@ -72,5 +70,6 @@ function main()
     echo "Done!"
 }
 
+clear
 base
 main
