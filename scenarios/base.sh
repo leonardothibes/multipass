@@ -15,7 +15,7 @@ function update()
 
 function utils()
 {
-    echo " - Installing utils..."
+    echo " - Installing Utils..."
 
     LOCK=/tmp/lock.base.utils
     [ -f ${LOCK} ] && return
@@ -44,6 +44,10 @@ function zsh()
     > ${LOCK}
 }
 
-update
-utils
-zsh
+function base()
+{
+    update
+    utils
+    zsh
+    echo ""
+}
