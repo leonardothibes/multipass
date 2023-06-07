@@ -34,10 +34,13 @@ function zsh()
     LOCK=/tmp/lock.base.zsh
     [ -f ${LOCK} ] && return
 
-    sudo apt install -y zsh fonts-powerline > /dev/null 2>&1
+    sudo apt install -y zsh fonts-powerline                                    > /dev/null 2>&1
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh > /dev/null 2>&1
 
+    mkdir -p  ${HOME}/.oh-my-zsh/cache
+    chmod 755 ${HOME}/.oh-my-zsh/oh-my-zsh.sh
 
-    # > ${LOCK}
+    > ${LOCK}
 }
 
 update
