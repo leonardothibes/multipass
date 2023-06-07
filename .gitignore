@@ -1,0 +1,13 @@
+Thumbs.db
+.DS_Store
+.buildpath
+.project
+.vagrant
+.settings
+.idea
+*.db
+*.bak
+*.bkp
+*.swp
+*.log
+test.sh
