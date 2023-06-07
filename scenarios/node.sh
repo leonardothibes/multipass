@@ -48,8 +48,6 @@ function extras()
 
     PACKAGES="
         npm-check-updates
-        http-server
-        chupakabra
         node-cpf-cli
         yarn
         uuid
