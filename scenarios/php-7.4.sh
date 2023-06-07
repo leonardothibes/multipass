@@ -73,10 +73,10 @@ function extras()
     LOCK=/tmp/lock.php.extras
     [ -f ${LOCK} ] && return
 
-    sudo curl -s https://github.com/leonardothibes/workstation/raw/master/scripts/09-php/bin/md5 /usr/local/bin/md5
+    sudo curl -s https://github.com/leonardothibes/workstation/raw/master/scripts/09-php/bin/md5.php /usr/local/bin/md5
     sudo chmod 755 /usr/local/bin/md5
 
-    sudo curl -s https://github.com/leonardothibes/workstation/raw/master/scripts/09-php/bin/sha1 /usr/local/bin/sha1
+    sudo curl -s https://github.com/leonardothibes/workstation/raw/master/scripts/09-php/bin/sha1.php /usr/local/bin/sha1
     sudo chmod 755 /usr/local/bin/sha1
 
     > ${LOCK}
