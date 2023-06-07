@@ -19,6 +19,8 @@ function utils()
     [ -f ${LOCK} ] && return
 
     sudo apt install -y git-flow \
+                        curl     \
+                        wget     \
                         make     \
                         zip      \
     > /dev/null 2>&1
