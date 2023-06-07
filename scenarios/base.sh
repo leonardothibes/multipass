@@ -24,9 +24,22 @@ function utils()
                         make     \
                         zip      \
     > /dev/null 2>&1
-    
     > ${LOCK}
+}
+
+function zsh()
+{
+    echo " - Installing ZSH..."
+
+    LOCK=/tmp/lock.base.zsh
+    [ -f ${LOCK} ] && return
+
+    sudo apt install -y zsh fonts-powerline > /dev/null 2>&1
+
+
+    # > ${LOCK}
 }
 
 update
 utils
+zsh
