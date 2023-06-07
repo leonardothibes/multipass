@@ -30,6 +30,8 @@ function node()
     LOCK=/tmp/lock.node.${VERSION}
     [ -f ${LOCK} ] && return
 
+    sudo su - ${USER} -c "source ~/.profile"
+
     # sudo su - ${USER} -c "nvm install ${VERSION} > /dev/null 2>&1"
     sudo su - ${USER} -c "nvm install ${VERSION}"
 
@@ -62,8 +64,10 @@ function extras()
 
 function main()
 {
+    clear
     echo "Installing Node.js development scenario"
 
+    base
     nvmTool
     node
     # extras
@@ -72,6 +76,4 @@ function main()
     echo "Done!"
 }
 
-clear
-base
 main
