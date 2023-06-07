@@ -23,7 +23,7 @@ Scenarios Instalation
 
 **Node.js**
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/node.sh)"
+wget -qO- https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/node.sh | bash
 ```
 
 Author
