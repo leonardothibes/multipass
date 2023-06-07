@@ -39,6 +39,7 @@ function zsh()
 
     mkdir -p  ${HOME}/.oh-my-zsh/cache
     chmod 755 ${HOME}/.oh-my-zsh/oh-my-zsh.sh
+    sudo chsh -s /bin/zsh ubuntu
 
     > ${LOCK}
 }
