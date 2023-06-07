@@ -18,8 +18,7 @@ function nvmTool()
     LOCK=/tmp/lock.node.nvm
     [ -f ${LOCK} ] && return
 
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash > /dev/null 2>&1
-
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash > /dev/null 2>&1
     > ${LOCK}
 }
 
@@ -30,10 +29,11 @@ function node()
     LOCK=/tmp/lock.node.${VERSION}
     [ -f ${LOCK} ] && return
 
-    sudo su - ${USER} -c "source ~/.profile"
+    export NVM_DIR="$HOME/.nvm"
+    $NVM_DIR/nvm.sh
 
-    # sudo su - ${USER} -c "nvm install ${VERSION} > /dev/null 2>&1"
-    sudo su - ${USER} -c "nvm install ${VERSION}"
+    # sudo su - ${USER} -c "source ~/.profile ; nvm install ${VERSION} > /dev/null 2>&1"
+    sudo su - ${USER} -c "source ~/.profile ; nvm install ${VERSION}"
 
     > ${LOCK}
 }
@@ -70,7 +70,7 @@ function main()
     base
     nvmTool
     node
-    extras
+    # extras
 
     echo ""
     echo "Done!"
