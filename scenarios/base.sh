@@ -39,7 +39,9 @@ function zsh()
 
     mkdir -p  ${HOME}/.oh-my-zsh/cache
     chmod 755 ${HOME}/.oh-my-zsh/oh-my-zsh.sh
-    sudo chsh -s /bin/zsh ubuntu
+
+    curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/17-zsh/confs/.zshrc -o ${HOME}/.zshrc
+    sudo chsh -s /bin/zsh ${USER}
 
     > ${LOCK}
 }
