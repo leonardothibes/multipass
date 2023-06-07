@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./scenarios/node/install.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/node/install.sh)"
