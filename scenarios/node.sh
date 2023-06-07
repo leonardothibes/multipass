@@ -7,7 +7,7 @@ VERSION=16
 if [ -f $BASE ]; then
     source $BASE
 else
-    curl -s https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/base.sh -o /tmp/bash.sh
+    curl -s https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/base.sh -o /tmp/base.sh
     source /tmp/base.sh
 fi
 
