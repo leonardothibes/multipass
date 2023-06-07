@@ -3,6 +3,14 @@ Multipass
 
 Script for instalation of dwevelopment scenarios into [Multipass](https://multipass.run/).
 
+Scenarios Instalation
+=====================
+
+**Node.js**
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/develop/scenarios/base/install.sh)"
+```
+
 Author
 ------
 
