@@ -30,10 +30,8 @@ function node()
     [ -f ${LOCK} ] && return
 
     export NVM_DIR="$HOME/.nvm"
-    $NVM_DIR/nvm.sh
-
-    # sudo su - ${USER} -c "source ~/.profile ; nvm install ${VERSION} > /dev/null 2>&1"
-    sudo su - ${USER} -c "source ~/.profile ; nvm install ${VERSION}"
+    source $NVM_DIR/nvm.sh
+    nvm install ${VERSION} > /dev/null 2>&1
 
     > ${LOCK}
 }
@@ -70,7 +68,7 @@ function main()
     base
     nvmTool
     node
-    # extras
+    extras
 
     echo ""
     echo "Done!"
