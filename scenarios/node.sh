@@ -1,7 +1,5 @@
 #!/bin/bash
 
-VERSION=16
-
 function download()
 {
     HERE=$(dirname $0)
@@ -28,6 +26,7 @@ function nvmTool()
 
 function node()
 {
+    VERSION=$1
     echo " - Installing Node.js ${VERSION}..."
 
     LOCK=/tmp/lock.node.${VERSION}
@@ -77,7 +76,7 @@ function main()
     download
     base
     nvmTool
-    node
+    node "16"
     extras
 
     echo ""

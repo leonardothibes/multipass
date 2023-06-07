@@ -44,9 +44,24 @@ function zsh()
     > ${LOCK}
 }
 
+function vim()
+{
+    echo " - Installing VIM..."
+
+    LOCK=/tmp/lock.base.vim
+    [ -f ${LOCK} ] && return
+
+    sudo apt install -y vim > /dev/null 2>&1
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/06-vim/confs/vimrc -o /etc/vim/vimrc
+    sudo chmod 644 /etc/vim/vimrc
+
+    > ${LOCK}
+}
+
 function base()
 {
     update
     utils
     zsh
+    vim
 }
