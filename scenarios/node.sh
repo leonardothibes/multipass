@@ -13,33 +13,60 @@ if [ -f $BASE ]; then
 #     sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/base.sh)"
 fi
 
-function nvm()
+function nvmTool()
 {
+    echo " - Installing NVM..."
+
     LOCK=/tmp/lock.node.nvm
     [ -f ${LOCK} ] && return
 
-    echo " - Installing NVM..."
-
     wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash > /dev/null 2>&1
 
-    source ~/.profile
-
-    # > ${LOCK}
-
+    > ${LOCK}
 }
 
 function node()
 {
     echo " - Installing Node.js ${VERSION}..."
 
+    LOCK=/tmp/lock.node.${VERSION}
+    [ -f ${LOCK} ] && return
+
+    sudo su - ${USER} -c "nvm install ${VERSION} > /dev/null 2>&1"
+    > ${LOCK}
+}
+
+function extras()
+{
+    echo " - Installing extra tools..."
+
+    LOCK=/tmp/lock.node.extras
+    [ -f ${LOCK} ] && return
+
+    PACKAGES="
+        npm-check-updates
+        http-server
+        chupakabra
+        node-cpf-cli
+        yarn
+        uuid
+    "
+
+    for PACKAGE in ${PACKAGES}
+    do
+        sudo su - ${USER} -c "npm install --ignore-scripts -g ${PACKAGE} > /dev/null 2>&1"
+    done;
+
+    > ${LOCK}
 }
 
 function main()
 {
     echo "Installing Node.js development scenario"
 
-    nvm
+    nvmTool
     node
+    extras
 
     echo ""
     echo "Done!"

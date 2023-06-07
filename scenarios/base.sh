@@ -41,9 +41,13 @@ function zsh()
     chmod 755 ${HOME}/.oh-my-zsh/oh-my-zsh.sh
 
     curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/17-zsh/confs/.zshrc -o ${HOME}/.zshrc
-    sudo chsh -s /bin/zsh ${USER}
-
     > ${LOCK}
+}
+
+function setShell()
+{
+    SHELL=$1
+    sudo chsh -s /bin/${SHELL} ${USER}
 }
 
 function base()
