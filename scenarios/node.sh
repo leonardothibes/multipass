@@ -9,8 +9,9 @@ VERSION=16
 if [ -f $BASE ]; then
     source $BASE
     base
-# else
-#     sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/base.sh)"
+else
+    curl -s https://raw.githubusercontent.com/leonardothibes/multipass/master/scenarios/base.sh -o /tmp/bash.sh
+    source /tmp/bash.sh
 fi
 
 function nvmTool()
