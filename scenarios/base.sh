@@ -46,11 +46,7 @@ function zsh()
 
 function base()
 {
-    echo "Installing Base development scenario"
-
     update
     utils
     zsh
-
-    echo ""
 }
