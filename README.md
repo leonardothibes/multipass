@@ -8,12 +8,12 @@ Scenarios Instalation
 
 **Node.js**
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/develop/scenarios/node/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/master/node.sh)"
 ```
 
-**PHP 7.4**
+**PHP**
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/develop/scenarios/php/7.4/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/leonardothibes/multipass/master/php.sh)"
 ```
 
 Author
