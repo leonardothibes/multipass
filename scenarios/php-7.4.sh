@@ -46,8 +46,8 @@ function php()
     sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/xdebug.ini   -o /etc/php/${VERSION}/mods-available
     sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/freetds.conf -o /etc/freetds/freetds.conf
 
-    ln -sf /etc/php/${VERSION}/cli/php.ini /etc/php.ini
-    ln -sf /usr/bin/php${VERSION} /etc/alternatives/php
+    sudo ln -sf /etc/php/${VERSION}/cli/php.ini /etc/php.ini
+    sudo ln -sf /usr/bin/php${VERSION} /etc/alternatives/php
 
     > ${LOCK}
 }
