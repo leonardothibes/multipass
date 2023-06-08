@@ -105,6 +105,5 @@ function after()
     echo ""
 
     gitConfig
-
     echo "Already configured"
 }
