@@ -93,6 +93,7 @@ function main()
     php
     composer
     extras
+    after
 
     echo ""
     echo "Done!"
