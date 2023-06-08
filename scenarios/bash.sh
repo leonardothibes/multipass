@@ -21,6 +21,7 @@ function main()
 
     download
     base
+    after
 
     echo ""
     echo "Done!"

@@ -79,6 +79,7 @@ function main()
     nvmTool
     node "16"
     extras
+    after
 
     echo ""
     echo "Done!"
