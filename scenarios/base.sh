@@ -58,10 +58,52 @@ function vim()
     > ${LOCK}
 }
 
+function gitName()
+{
+    LOCK=/tmp/lock.base.git.name
+    [ -f ${LOCK} ] && return
+
+    read -p "Informe o nome usado no GIT: " NAME
+    if [ "$NAME" != "" ]; then
+        git config --global user.name "$NAME"
+    fi
+
+    > ${LOCK}
+}
+
+function gitEmail()
+{
+    LOCK=/tmp/lock.base.git.email
+    [ -f ${LOCK} ] && return
+
+    read -p "Informe o e-mail usado no GIT: " EMAIL
+    if [ "$EMAIL" != "" ]; then
+        git config --global user.email "$EMAIL"
+    fi
+
+    > ${LOCK}
+}
+
+function gitConfig()
+{
+    gitName
+    gitEmail
+}
+
 function base()
 {
     update
     utils
     zsh
     vim
+}
+
+function after()
+{
+    echo ""
+    echo "Extra configurations"
+
+    gitConfig
+
+    echo "Already configured"
 }
