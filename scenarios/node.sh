@@ -32,9 +32,12 @@ function node()
     LOCK=/tmp/lock.node.${VERSION}
     [ -f ${LOCK} ] && return
 
-    export NVM_DIR="$HOME/.nvm"
-    source $NVM_DIR/nvm.sh
-    nvm install ${VERSION} > /dev/null 2>&1
+    HAS=$(which noded | wc -l)
+    if [ $HAS == "0" ]; then
+        export NVM_DIR="$HOME/.nvm"
+        source $NVM_DIR/nvm.sh
+        nvm install ${VERSION} > /dev/null 2>&1
+    fi
 
     > ${LOCK}
 }
