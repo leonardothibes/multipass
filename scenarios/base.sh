@@ -102,6 +102,7 @@ function after()
 {
     echo ""
     echo "Extra configurations"
+    echo ""
 
     gitConfig
 
