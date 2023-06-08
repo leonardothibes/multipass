@@ -13,7 +13,7 @@ function download()
     fi
 }
 
-function php()
+function installPHP()
 {
     export DEBIAN_FRONTEND=noninteractive
     VERSION=7.4
@@ -90,7 +90,7 @@ function main()
 
     download
     base
-    php
+    installPHP
     composer
     extras
     after

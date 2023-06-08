@@ -24,7 +24,7 @@ function nvmTool()
     > ${LOCK}
 }
 
-function node()
+function installNode()
 {
     VERSION=$1
     echo " - Installing Node.js ${VERSION}..."
@@ -77,7 +77,7 @@ function main()
     download
     base
     nvmTool
-    node "16"
+    installNode "16"
     extras
     after
 
