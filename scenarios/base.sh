@@ -45,7 +45,7 @@ function zsh()
 
     sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o /etc/skel/.zshrc
 
-    sudo cp -Rf ${INSTALL} /home/ubuntu
+    sudo cp -Rf ${INSTALL} /home/ubuntu/.oh-my-zsh
     sudo cp -f /etc/skel/.zshrc /home/ubuntu
     sudo chown -R ubuntu: /home/ubuntu
 
