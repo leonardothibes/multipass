@@ -18,11 +18,11 @@ function utils()
     LOCK=/tmp/lock.base.utils
     [ -f ${LOCK} ] && return
 
-    sudo apt install -y git-flow \
-                        curl     \
-                        wget     \
-                        make     \
-                        zip      \
+    sudo apt-get install -y git-flow \
+                            curl     \
+                            wget     \
+                            make     \
+                            zip      \
     > /dev/null 2>&1
     > ${LOCK}
 }
@@ -34,8 +34,10 @@ function zsh()
     LOCK=/tmp/lock.base.zsh
     [ -f ${LOCK} ] && return
 
-    DIR=ubuntu
-    sudo apt install -y zsh fonts-powerline                                   #> /dev/null 2>&1
+    export DEBIAN_FRONTEND=noninteractive
+    export DIR=ubuntu
+
+    sudo apt-get install -y zsh fonts-powerline                               #> /dev/null 2>&1
     git clone https://github.com/robbyrussell/oh-my-zsh.git ${DIR}/.oh-my-zsh #> /dev/null 2>&1
 
     mkdir -p  ${DIR}/.oh-my-zsh/cache
@@ -52,7 +54,7 @@ function vim()
     LOCK=/tmp/lock.base.vim
     [ -f ${LOCK} ] && return
 
-    sudo apt install -y vim > /dev/null 2>&1
+    sudo apt-get install -y vim > /dev/null 2>&1
     sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/06-vim/confs/vimrc -o /etc/vim/vimrc
     sudo chmod 644 /etc/vim/vimrc
 
