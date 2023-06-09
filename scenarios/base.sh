@@ -45,6 +45,10 @@ function zsh()
     sudo mkdir -p  ${INSTALL}/cache
     sudo chmod 755 ${INSTALL}/oh-my-zsh.sh
 
+    [ -f /home/ubuntu/.zshrc ]     || cp -Rf /etc/skel/.zshrc /home/ubuntu
+    [ -d /home/ubuntu/.oh-my-zsh ] || cp -Rf ${INSTALL} /home/ubuntu/.oh-my-zsh
+    [ -d /home/ubuntu ]            && chown -R ubuntu:ubuntu /home/ubuntu
+
     > ${LOCK}
 }
 
