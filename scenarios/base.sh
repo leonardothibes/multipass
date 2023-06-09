@@ -39,7 +39,7 @@ function zsh()
     sudo apt-get install -y zsh fonts-powerline > /dev/null 2>&1
 
     INSTALL=/etc/skel/.oh-my-zsh
-    sudo git clone https://github.com/robbyrussell/oh-my-zsh.git ${INSTALL} #> /dev/null 2>&1
+    sudo git clone https://github.com/robbyrussell/oh-my-zsh.git ${INSTALL} > /dev/null 2>&1
     sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o /etc/skel/.zshrc
 
     sudo mkdir -p  ${INSTALL}/cache
