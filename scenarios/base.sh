@@ -37,9 +37,9 @@ function zsh()
     export DEBIAN_FRONTEND=noninteractive
     sudo apt-get install -y zsh fonts-powerline > /dev/null 2>&1
 
-    INSTALL=/home/ubuntu/.oh-my-zsh
+    INSTALL=/etc/skel/.oh-my-zsh
     sudo git clone https://github.com/robbyrussell/oh-my-zsh.git ${INSTALL} #> /dev/null 2>&1
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o /home/ubuntu/.zshrc
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o /etc/skel/.zshrc
 
     sudo mkdir -p  ${INSTALL}/cache
     sudo chmod 755 ${INSTALL}/oh-my-zsh.sh
