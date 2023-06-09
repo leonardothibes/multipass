@@ -35,7 +35,7 @@ function zsh()
     [ -f ${LOCK} ] && return
 
     DIR=ubuntu
-    sudo apt install -y zsh fonts-powerline                                    > /dev/null 2>&1
+    sudo apt install -y zsh fonts-powerline                                   > /dev/null 2>&1
     git clone https://github.com/robbyrussell/oh-my-zsh.git ${DIR}/.oh-my-zsh > /dev/null 2>&1
 
     mkdir -p  ${DIR}/.oh-my-zsh/cache
