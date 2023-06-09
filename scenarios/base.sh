@@ -34,6 +34,10 @@ function zsh()
     LOCK=/tmp/lock.base.zsh
     [ -f ${LOCK} ] && return
 
+    if [ "${HOME}" == "" ]; then
+        $HOME=ubuntu
+    fi
+
     sudo apt install -y zsh fonts-powerline                                    > /dev/null 2>&1
     git clone https://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh > /dev/null 2>&1
 
