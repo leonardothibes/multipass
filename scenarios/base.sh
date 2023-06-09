@@ -34,17 +34,14 @@ function zsh()
     LOCK=/tmp/lock.base.zsh
     [ -f ${LOCK} ] && return
 
-    if [ "${HOME}" == "" ]; then
-        $HOME=ubuntu
-    fi
-
+    DIR=ubuntu
     sudo apt install -y zsh fonts-powerline                                    > /dev/null 2>&1
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh > /dev/null 2>&1
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ${DIR}/.oh-my-zsh > /dev/null 2>&1
 
-    mkdir -p  ${HOME}/.oh-my-zsh/cache
-    chmod 755 ${HOME}/.oh-my-zsh/oh-my-zsh.sh
+    mkdir -p  ${DIR}/.oh-my-zsh/cache
+    chmod 755 ${DIR}/.oh-my-zsh/oh-my-zsh.sh
 
-    curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o ${HOME}/.zshrc
+    curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o ${DIR}/.zshrc
     > ${LOCK}
 }
 
