@@ -23,6 +23,7 @@ function utils()
                             wget     \
                             make     \
                             zip      \
+                            unzip    \
     > /dev/null 2>&1
     > ${LOCK}
 }
