@@ -35,16 +35,14 @@ function zsh()
     [ -f ${LOCK} ] && return
 
     export DEBIAN_FRONTEND=noninteractive
-    INSTALL=/home/ubuntu/.oh-my-zsh
+    sudo apt-get install -y zsh fonts-powerline > /dev/null 2>&1
 
-    sudo apt-get install -y zsh fonts-powerline                             > /dev/null 2>&1
+    INSTALL=/home/ubuntu/.oh-my-zsh
     sudo git clone https://github.com/robbyrussell/oh-my-zsh.git ${INSTALL} #> /dev/null 2>&1
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o /home/ubuntu/.zshrc
 
     sudo mkdir -p  ${INSTALL}/cache
     sudo chmod 755 ${INSTALL}/oh-my-zsh.sh
-
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o /home/ubuntu/.zshrc
-    sudo chown -R ubuntu:ubuntu /home/ubuntu
 
     > ${LOCK}
 }
