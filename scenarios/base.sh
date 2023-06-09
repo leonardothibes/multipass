@@ -45,7 +45,6 @@ function zsh()
     sudo mkdir -p  ${INSTALL}/cache
     sudo chmod 755 ${INSTALL}/oh-my-zsh.sh
 
-
     if [ -d /home/ubuntu ]; then
         sudo cp -Rf ${INSTALL} /home/ubuntu/.oh-my-zsh
         sudo cp -Rf /etc/skel/.zshrc /home/ubuntu
