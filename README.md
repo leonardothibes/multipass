@@ -1,7 +1,7 @@
 Multipass
 =========
 
-Script for instalation of dwevelopment scenarios into [Multipass](https://multipass.run/).
+Script for instalation of development scenarios into [Multipass](https://multipass.run/).
 
 Multipass Instalation
 =====================
