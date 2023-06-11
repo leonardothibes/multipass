@@ -7,7 +7,7 @@ function update()
     LOCK=/tmp/lock.base.update
     [ -f ${LOCK} ] && return
 
-    sudo -n apt update > /dev/null 2>&1
+    sudo apt update > /dev/null 2>&1
     > ${LOCK}
 }
 
@@ -18,7 +18,7 @@ function utils()
     LOCK=/tmp/lock.base.utils
     [ -f ${LOCK} ] && return
 
-    sudo -n apt-get install -y git-flow \
+    sudo apt-get install -y git-flow \
                             curl     \
                             wget     \
                             make     \
@@ -36,19 +36,19 @@ function zsh()
     [ -f ${LOCK} ] && return
 
     export DEBIAN_FRONTEND=noninteractive
-    sudo -n apt-get install -y zsh fonts-powerline > /dev/null 2>&1
+    sudo apt-get install -y zsh fonts-powerline > /dev/null 2>&1
 
     INSTALL=/etc/skel/.oh-my-zsh
-    sudo -n git clone https://github.com/robbyrussell/oh-my-zsh.git ${INSTALL} > /dev/null 2>&1
-    sudo -n curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o /etc/skel/.zshrc
+    sudo git clone https://github.com/robbyrussell/oh-my-zsh.git ${INSTALL} > /dev/null 2>&1
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/19-zsh/confs/.zshrc -o /etc/skel/.zshrc
 
-    sudo -n mkdir -p  ${INSTALL}/cache
-    sudo -n chmod 755 ${INSTALL}/oh-my-zsh.sh
+    sudo mkdir -p  ${INSTALL}/cache
+    sudo chmod 755 ${INSTALL}/oh-my-zsh.sh
 
     if [ -d /home/ubuntu ]; then
-        sudo -n cp -Rf ${INSTALL} /home/ubuntu/.oh-my-zsh
-        sudo -n cp -Rf /etc/skel/.zshrc /home/ubuntu
-        sudo -n chown -R ubuntu:ubuntu /home/ubuntu
+        sudo cp -Rf ${INSTALL} /home/ubuntu/.oh-my-zsh
+        sudo cp -Rf /etc/skel/.zshrc /home/ubuntu
+        sudo chown -R ubuntu:ubuntu /home/ubuntu
     fi
 
     > ${LOCK}
@@ -61,9 +61,9 @@ function vim()
     LOCK=/tmp/lock.base.vim
     [ -f ${LOCK} ] && return
 
-    sudo -n apt-get install -y vim > /dev/null 2>&1
-    sudo -n curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/06-vim/confs/vimrc -o /etc/vim/vimrc
-    sudo -n chmod 644 /etc/vim/vimrc
+    sudo apt-get install -y vim > /dev/null 2>&1
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/06-vim/confs/vimrc -o /etc/vim/vimrc
+    sudo chmod 644 /etc/vim/vimrc
 
     > ${LOCK}
 }
