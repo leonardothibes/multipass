@@ -68,8 +68,7 @@ function extras()
         uuid
     "
 
-    export NVM_DIR="$HOME/.nvm"
-    source $NVM_DIR/nvm.sh
+    source /opt/nvm/nvm.sh
     npm install -g npm@latest > /dev/null 2>&1
 
     for PACKAGE in ${PACKAGES}
