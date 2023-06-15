@@ -20,7 +20,20 @@ function nvmTool()
     LOCK=/tmp/lock.node.nvm
     [ -f ${LOCK} ] && return
 
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash > /dev/null 2>&1
+    [ -d /opt/nvm ]        || sudo git clone https://github.com/nvm-sh/nvm.git /opt/nvm > /dev/null 2>&1
+    [ -d /usr/local/nvm  ] || sudo mkdir /usr/local/nvm
+    [ -d /usr/local/node ] || sudo mkdir /usr/local/node
+
+    [ -f /etc/profile.d/nvm.sh ] || sudo touch /etc/profile.d/nvm.sh
+    sudo chmod 666 /etc/profile.d/nvm.sh
+
+    sudo echo 'export NVM_DIR=/usr/local/nvm'             > /etc/profile.d/nvm.sh
+    sudo echo 'source /opt/nvm/nvm.sh'                   >> /etc/profile.d/nvm.sh
+    sudo echo ''                                         >> /etc/profile.d/nvm.sh
+    sudo echo 'export NPM_CONFIG_PREFIX=/usr/local/node' >> /etc/profile.d/nvm.sh
+    sudo echo 'export PATH="/usr/local/node/bin:$PATH"'  >> /etc/profile.d/nvm.sh
+    sudo chmod 644 /etc/profile.d/nvm.sh
+
     > ${LOCK}
 }
 
@@ -34,8 +47,7 @@ function installNode()
 
     HAS=$(which node | wc -l)
     if [ $HAS == "0" ]; then
-        export NVM_DIR="$HOME/.nvm"
-        source $NVM_DIR/nvm.sh
+        source /opt/nvm/nvm.sh
         nvm install ${VERSION} > /dev/null 2>&1
     fi
 
@@ -77,9 +89,9 @@ function main()
     download
     base
     nvmTool
-    installNode "16"
-    extras
-    after
+    # installNode "16"
+    # extras
+    # after
 
     echo ""
     echo "Done!"
