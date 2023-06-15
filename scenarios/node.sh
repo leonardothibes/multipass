@@ -89,9 +89,9 @@ function main()
     download
     base
     nvmTool
-    # installNode "16"
-    # extras
-    # after
+    installNode "16"
+    extras
+    after
 
     echo ""
     echo "Done!"
