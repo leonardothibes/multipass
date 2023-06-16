@@ -42,8 +42,8 @@ function installPHP()
                     php${VERSION}-xdebug   \
     > /dev/null 2>&1
 
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/php.ini      -o /etc/php/${VERSION}/cli
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/xdebug.ini   -o /etc/php/${VERSION}/mods-available
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/php.ini      -o /etc/php/${VERSION}/cli/php.ini
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/xdebug.ini   -o /etc/php/${VERSION}/mods-available/xdebug.ini
     sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/freetds.conf -o /etc/freetds/freetds.conf
 
     sudo ln -sf /etc/php/${VERSION}/cli/php.ini /etc/php.ini

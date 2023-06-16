@@ -1,5 +1,5 @@
 {
   "name": "multipass-scripts",
   "description": "Script for instalation of development scenarios into Multipass",
-  "version": "1.3.9"
+  "version": "1.3.10"
 }
