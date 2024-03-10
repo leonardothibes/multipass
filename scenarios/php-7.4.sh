@@ -42,9 +42,9 @@ function installPHP()
                     php${VERSION}-xdebug   \
     > /dev/null 2>&1
 
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/php.ini      -o /etc/php/${VERSION}/cli/php.ini
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/xdebug.ini   -o /etc/php/${VERSION}/mods-available/xdebug.ini
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/confs/freetds.conf -o /etc/freetds/freetds.conf
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/core/scripts/09-php/confs/php.ini      -o /etc/php/${VERSION}/cli/php.ini
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/core/scripts/09-php/confs/xdebug.ini   -o /etc/php/${VERSION}/mods-available/xdebug.ini
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/core/scripts/09-php/confs/freetds.conf -o /etc/freetds/freetds.conf
 
     sudo ln -sf /etc/php/${VERSION}/cli/php.ini /etc/php.ini
     sudo ln -sf /usr/bin/php${VERSION} /etc/alternatives/php
@@ -59,7 +59,7 @@ function composer()
     LOCK=/tmp/lock.php.composer
     [ -f ${LOCK} ] && return
 
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/bin/composer -o /usr/local/bin/composer
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/core/scripts/09-php/bin/composer -o /usr/local/bin/composer
     sudo chmod 755 /usr/local/bin/composer
     sudo composer self-update > /dev/null 2>&1
 
@@ -73,10 +73,10 @@ function extras()
     LOCK=/tmp/lock.php.extras
     [ -f ${LOCK} ] && return
 
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/bin/md5.php -o /usr/local/bin/md5
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/core/scripts/09-php/bin/md5.php -o /usr/local/bin/md5
     sudo chmod 755 /usr/local/bin/md5
 
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/09-php/bin/sha1.php -o /usr/local/bin/sha1
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/core/scripts/09-php/bin/sha1.php -o /usr/local/bin/sha1
     sudo chmod 755 /usr/local/bin/sha1
 
     > ${LOCK}
