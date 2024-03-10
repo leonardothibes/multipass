@@ -62,7 +62,7 @@ function vim()
     [ -f ${LOCK} ] && return
 
     sudo apt-get install -y vim > /dev/null 2>&1
-    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/scripts/06-vim/confs/vimrc -o /etc/vim/vimrc
+    sudo curl -s https://raw.githubusercontent.com/leonardothibes/workstation/master/core/scripts/06-vim/confs/vimrc -o /etc/vim/vimrc
     sudo chmod 644 /etc/vim/vimrc
 
     > ${LOCK}
